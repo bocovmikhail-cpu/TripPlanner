@@ -1,6 +1,6 @@
 from rest_framework import serializers
 from .models import Trip
-from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 
 
 class TripSerializer(serializers.ModelSerializer):
@@ -9,9 +9,6 @@ class TripSerializer(serializers.ModelSerializer):
     class Meta:
         model = Trip
         fields = ["id", "title", "destination", "start_date", "end_date", "owner"]
-
-
-User = get_user_model()
 
 
 class RegisterSerializer(serializers.ModelSerializer):
